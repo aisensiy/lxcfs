@@ -6,7 +6,7 @@ ENV LXCFS_VERSION 4.0.5
 
 RUN wget https://github.com/lxc/lxcfs/archive/lxcfs-$LXCFS_VERSION.tar.gz && \
     mkdir /lxcfs && tar xzvf lxcfs-$LXCFS_VERSION.tar.gz -C /lxcfs --strip-components=1 && \
-    cd /lxcfs  && ./bootstrap.sh && ./configure && make && make install
+    cd /lxcfs  && ./bootstrap.sh && ./configure && make
 
 COPY start.sh /
 CMD ["/start.sh"]
